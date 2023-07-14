@@ -12,7 +12,7 @@ public class Saxon extends Soldier {
         if (this.health<=0){
             this.msg="A Saxon has died in combat";
         } else {
-            this.msg= "A Saxon has received" + damage + "points of damage";
+            this.msg= "A Saxon has received " + damage + " points of damage";
         }
 
         return this.health-=damage;
@@ -23,5 +23,13 @@ public class Saxon extends Soldier {
 
     public int getHealth() {
         return this.health;
+    }
+
+    public void setHealth(int i) {
+        this.health=i;
+    }
+
+    public int getStrength() {
+        return this.strength;
     }
 }

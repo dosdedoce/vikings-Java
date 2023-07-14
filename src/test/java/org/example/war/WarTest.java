@@ -56,63 +56,62 @@ class WarTest {
     public void vikingAttack_should_make_Saxon_receiveDamage_equal_to_the_strength_of_a_Viking() {
         war.addSaxon(saxon);
         war.addViking(viking);
-        int oldHealth = saxon.getHealth();
-        int actualHealth = oldHealth - viking.getStrength();
+        int actualHealth = saxon.getHealth() - viking.getStrength();
         war.vikingAttack();
         assertEquals(saxon.getHealth(), actualHealth);
     }
 
-//    @Test
-//    public void vikingAttack_should_remove_dead_saxons_from_the_army() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        saxon.setHealth(150);
-//        war.vikingAttack();
-//        assertTrue(war.getSaxonArmy().isEmpty());
-//    }
-//
-//    @Test
-//    public void vikingAttack_should_return_result_of_calling_receiveDamage_of_a_Saxon_with_the_strength_of_a_Viking() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        saxon.setHealth(150);
-//        String response = war.vikingAttack();
-//        assertEquals("A Saxon has died in combat", response);
-//    }
-//
-//    @Test
-//    public void saxonAttack_should_make_Viking_receiveDamage_equal_to_the_strength_of_a_Viking() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        int oldHealth = viking.getHealth();
-//        int actualHealth = oldHealth - saxon.getStrength();
-//        war.saxonAttack();
-//        assertEquals(viking.getHealth(), actualHealth);
-//    }
-//
-//    @Test
-//    public void saxonAttack_should_remove_dead_viking_from_the_army() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        viking.setHealth(150);
-//        war.saxonAttack();
-//        assertTrue(war.getVikingArmy().isEmpty());
-//    }
-//
-//    @Test
-//    public void saxonAttack_should_return_a_message_with_the_name_of_the_dead_viking() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        viking.setHealth(150);
-//        String response = war.saxonAttack();
-//        assertEquals(viking.getName() + "has died in act of combat", response);
-//    }
-//
-//    @Test
-//    public void saxonAttack_should_return_result_of_calling_receiveDamage_of_a_Viking_with_the_strength_of_a_Saxon() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        String response = war.saxonAttack();
-//        assertEquals(viking.getName() + "has received" + saxon.getStrength() + "points of damage", response);
-//    }
+    @Test
+    public void vikingAttack_should_remove_dead_saxons_from_the_army() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        saxon.setHealth(150);
+        war.vikingAttack();
+        assertTrue(war.getSaxonArmy().isEmpty());
+    }
+
+    @Test
+    public void vikingAttack_should_return_result_of_calling_receiveDamage_of_a_Saxon_with_the_strength_of_a_Viking() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        saxon.setHealth(150);
+        String response = war.vikingAttack();
+        assertEquals("A Saxon has died in combat", response);
+    }
+
+   @Test
+   public void saxonAttack_should_make_Viking_receiveDamage_equal_to_the_strength_of_a_Viking() {
+       war.addSaxon(saxon);
+       war.addViking(viking);
+       int oldHealth = viking.getHealth();
+       int actualHealth = oldHealth - saxon.getStrength();
+       war.saxonAttack();
+       assertEquals(viking.getHealth(), actualHealth);
+   }
+
+    @Test
+    public void saxonAttack_should_remove_dead_viking_from_the_army() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        viking.setHealth(150);
+        war.saxonAttack();
+        assertTrue(war.getVikingArmy().isEmpty());
+    }
+
+    @Test
+    public void saxonAttack_should_return_a_message_with_the_name_of_the_dead_viking() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        viking.setHealth(150);
+        String response = war.saxonAttack();
+        assertEquals(viking.getName() + "has died in act of combat", response);
+    }
+
+    @Test
+    public void saxonAttack_should_return_result_of_calling_receiveDamage_of_a_Viking_with_the_strength_of_a_Saxon() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        String response = war.saxonAttack();
+        assertEquals(viking.getName() + "has received" + saxon.getStrength() + "points of damage", response);
+    }
 }

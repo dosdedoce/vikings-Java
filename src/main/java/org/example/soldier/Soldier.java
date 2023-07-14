@@ -14,4 +14,5 @@ public class Soldier {
     public int receiveDamage(int damage){
         return this.health-=damage;
     }
+
 }

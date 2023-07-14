@@ -27,4 +27,16 @@ public class Vikings extends Soldier {
     public int getStrength() {
         return this.strength;
     }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public void setHealth(int i) {
+        this.health=i;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
