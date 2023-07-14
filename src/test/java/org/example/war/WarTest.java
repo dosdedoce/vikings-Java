@@ -1,69 +1,67 @@
 package org.example.war;
-
 import org.example.saxon.Saxon;
-import org.example.viking.Viking;
+import org.example.vikins.Vikings;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class WarTest {
 
     String name = "Harald";
     int strength = 150;
     int health = 300;
 
-//    Saxon saxon = new Saxon(health, strength);
-//    Viking viking = new Viking(name, health, strength);
-//
-//    War war = new War();
-//
-//    @Test
-//    public void should_receive_0_arguments() {
-//        assertNotNull(war);
-//    }
-//
-//    @Test
-//    public void should_assign_an_empty_array_to_the_vikingArmy_property() {
-//        List<Viking> vikingArmy = war.getVikingArmy();
-//        assertTrue(vikingArmy.isEmpty());
-//    }
-//
-//    @Test
-//    public void should_assign_an_empty_array_to_the_saxonArmy_property() {
-//        List<Object> saxonArmy = war.getSaxonArmy();
-//        assertTrue(saxonArmy.isEmpty());
-//    }
-//
-//    @Test
-//    public void add_viking_should_receive_1_argument() {
-//        war.addViking(viking);
-//        assertNotNull(war.getVikingArmy());
-//    }
-//
-//    @Test
-//    public void add_viking_should_add_the_received_Viking_to_the_army() {
-//        war.addViking(viking);
-//        assertNotNull(war.getVikingArmy());
-//    }
-//
-//    @Test
-//    public void add_saxon_should_add_the_received_Saxon_to_the_army() {
-//        war.addSaxon(saxon);
-//        assertNotNull(war.getVikingArmy());
-//    }
-//
-//    @Test
-//    public void vikingAttack_should_make_Saxon_receiveDamage_equal_to_the_strength_of_a_Viking() {
-//        war.addSaxon(saxon);
-//        war.addViking(viking);
-//        int oldHealth = saxon.getHealth();
-//        int actualHealth = oldHealth - viking.getStrength();
-//        war.vikingAttack();
-//        assertEquals(saxon.getHealth(), actualHealth);
-//    }
-//
+    Saxon saxon = new Saxon(health, strength);
+    Vikings viking = new Vikings(name, health, strength);
+
+    War war = new War();
+
+    @Test
+    public void should_receive_0_arguments() {
+        assertNotNull(war);
+    }
+
+    @Test
+    public void should_assign_an_empty_array_to_the_vikingArmy_property() {
+        List<Vikings> vikingArmy = war.getVikingArmy();
+        assertTrue(vikingArmy.isEmpty());
+    }
+
+   @Test
+   public void should_assign_an_empty_array_to_the_saxonArmy_property() {
+       List<Saxon> saxonArmy = war.getSaxonArmy();
+       assertTrue(saxonArmy.isEmpty());
+   }
+
+    @Test
+    public void add_viking_should_receive_1_argument() {
+        war.addViking(viking);
+        assertNotNull(war.getVikingArmy());
+    }
+
+    @Test
+    public void add_viking_should_add_the_received_Viking_to_the_army() {
+        war.addViking(viking);
+        assertNotNull(war.getVikingArmy());
+    }
+
+    @Test
+    public void add_saxon_should_add_the_received_Saxon_to_the_army() {
+        war.addSaxon(saxon);
+        assertNotNull(war.getVikingArmy());
+    }
+
+    @Test
+    public void vikingAttack_should_make_Saxon_receiveDamage_equal_to_the_strength_of_a_Viking() {
+        war.addSaxon(saxon);
+        war.addViking(viking);
+        int oldHealth = saxon.getHealth();
+        int actualHealth = oldHealth - viking.getStrength();
+        war.vikingAttack();
+        assertEquals(saxon.getHealth(), actualHealth);
+    }
+
 //    @Test
 //    public void vikingAttack_should_remove_dead_saxons_from_the_army() {
 //        war.addSaxon(saxon);
